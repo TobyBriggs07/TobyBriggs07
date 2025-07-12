@@ -59,6 +59,7 @@
       padding: 2rem;
       max-width: 90%;
       margin: 0 auto;
+      overflow: visible ;
     }
 
     .justified-gallery a {
@@ -67,12 +68,18 @@
       border-radius: 2px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: visible !important;
+      
     }
+
 
     .justified-gallery a:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
+      z-index: 3;
     }
-
+    .justified-gallery .jg-entry {
+      overflow: visible !important;
+    }
     .justified-gallery img {
       cursor: pointer;
       width: 100%;
@@ -123,11 +130,34 @@
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
     }
+    .home-button {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+}
+/* Prevent white flash in Lightbox2 */
+.lightboxOverlay {
+  background: rgba(0, 0, 0, 0.99) !important;
+}
+
+.lightbox .lb-outerContainer {
+  background-color: #000 !important;
+}
+
+    .lightbox .lb-image {
+      border: none !important;
+      box-shadow: none !important;
+      background-color: transparent !important;
+      
+    }
+
   </style>
 </head>
 <body>
   <header>
-    <h1>Toby Briggs Photography</h1>
+    <h1><a href="index.html" class="home-button">Toby Briggs Photography</a></h1>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -136,18 +166,18 @@
   </header>
 
   <div class="container">
-    <h2>Sailboats1</h2>
+    <h2 class="home-button">Sailboats</h2>
     <div id="gallery" class="justified-gallery">
-      <a href="Photos/Sailboats/ddboat2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/ddboat2.jpg" alt="Image 1"></a>
-      <a href="Photos/Sailboats/duckdodgeboat.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/duckdodgeboat.jpg" alt="Image 2"></a>
-      <a href="Photos/Sailboats/eltoro.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/eltoro.jpg" alt="Image 3"></a>
-      <a href="Photos/Sailboats/eltoro2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/eltoro2.jpg" alt="Image 4"></a>
-      <a href="Photos/Sailboats/feva.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/feva.jpg" alt="Image 5"></a>
-      <a href="Photos/Sailboats/feva2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/feva2.jpg" alt="Image 6"></a>
-      <a href="Photos/Sailboats/lightning.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/lightning.jpg" alt="Image 7"></a>
-      <a href="Photos/Sailboats/raindog.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/raindog.jpg" alt="Image 8"></a>
-      <a href="Photos/Sailboats/raindog2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/raindog2.jpg" alt="Image 9"></a>
-      <a href="Photos/Sailboats/wptboat.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/wptboat.jpg" alt="Image 10"></a>
+      <a href="Photos/Sailboats/ddboat2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/ddboat2.jpg" alt="Image 1" loading="lazy"></a>
+      <a href="Photos/Sailboats/duckdodgeboat.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/duckdodgeboat.jpg" alt="Image 2" loading="lazy"></a>
+      <a href="Photos/Sailboats/eltoro.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/eltoro.jpg" alt="Image 3" loading="lazy"></a>
+      <a href="Photos/Sailboats/eltoro2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/eltoro2.jpg" alt="Image 4" loading="lazy"></a>
+      <a href="Photos/Sailboats/feva.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/feva.jpg" alt="Image 5" loading="lazy"></a>
+      <a href="Photos/Sailboats/feva2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/feva2.jpg" alt="Image 6" loading="lazy"></a>
+      <a href="Photos/Sailboats/lightning.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/lightning.jpg" alt="Image 7" loading="lazy"></a>
+      <a href="Photos/Sailboats/raindog.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/raindog.jpg" alt="Image 8" loading="lazy"></a>
+      <a href="Photos/Sailboats/raindog2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/raindog2.jpg" alt="Image 9" loading="lazy"></a>
+      <a href="Photos/Sailboats/wptboat.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/wptboat.jpg" alt="Image 10" loading="lazy"></a>
     </div>
   </div>
 
@@ -162,14 +192,17 @@
   <script>
   $(document).ready(function () {
     $('#gallery').justifiedGallery({
-      rowHeight: 300,
+      rowHeight: 400,
       margins: 8,
       lastRow: 'nojustify'
-    }).on('jg.complete', function () {
+      
+
+    })
+    .on('jg.complete', function () {
        lightbox.option({
-        resizeDuration: 0,
+        resizeDuration: 300,
         fadeDuration: 0,
-        imageFadeDuration: 0,
+        imageFadeDuration: 400,
         wrapAround: true,
         positionFromTop: 50,
         disableScrolling: true,
@@ -177,7 +210,7 @@
         showImageNumberLabel: false,
         albumLabel: "",
         fadeDuration: 0,
-        imageFadeDuration: 0
+        
       });
     });
   });
