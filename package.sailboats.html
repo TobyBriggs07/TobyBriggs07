@@ -1,14 +1,133 @@
+<!-- package1.html -->
+<!-- Save this as package1.html and duplicate/edit for package2, package3, etc. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Package 1 - Photography Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Toby Briggs Photography - Sailboats</title>
+  <link rel="icon" href="Photos/Favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  <!-- Lightbox2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
+<!-- jQuery (already have it) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- JustifiedGallery JS (already have it) -->
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- Lightbox2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #eee;
+    }
+
+    header {
+      background: linear-gradient(to right, #111, #222);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+
+    nav a {
+      color: #bbb;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .justified-gallery a {
+      display: inline-block;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .justified-gallery a:hover {
+      transform: scale(1.05);
+    }
+
+    .justified-gallery img {
+      cursor: pointer;
+      width: 100%;
+      height: auto;
+    }
+
+    .fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .fullscreen img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 1px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .fullscreen.hidden {
+      display: none;
+    }
+
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      color: #f5f5f5;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Your Photography</h1>
+    <h1>Toby Briggs Photography</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -17,11 +136,18 @@
   </header>
 
   <div class="container">
-    <h2>Package 1</h2>
-    <div class="gallery">
-      <img src="images/package1/img1.jpg" alt="Image 1">
-      <img src="images/package1/img2.jpg" alt="Image 2">
-      <img src="images/package1/img3.jpg" alt="Image 3">
+    <h2>Sailboats1</h2>
+    <div id="gallery" class="justified-gallery">
+      <a href="Photos/Sailboats/ddboat2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/ddboat2.jpg" alt="Image 1"></a>
+      <a href="Photos/Sailboats/duckdodgeboat.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/duckdodgeboat.jpg" alt="Image 2"></a>
+      <a href="Photos/Sailboats/eltoro.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/eltoro.jpg" alt="Image 3"></a>
+      <a href="Photos/Sailboats/eltoro2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/eltoro2.jpg" alt="Image 4"></a>
+      <a href="Photos/Sailboats/feva.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/feva.jpg" alt="Image 5"></a>
+      <a href="Photos/Sailboats/feva2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/feva2.jpg" alt="Image 6"></a>
+      <a href="Photos/Sailboats/lightning.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/lightning.jpg" alt="Image 7"></a>
+      <a href="Photos/Sailboats/raindog.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/raindog.jpg" alt="Image 8"></a>
+      <a href="Photos/Sailboats/raindog2.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/raindog2.jpg" alt="Image 9"></a>
+      <a href="Photos/Sailboats/wptboat.jpg" data-lightbox="Sailboats"><img src="Photos/Sailboats/wptboat.jpg" alt="Image 10"></a>
     </div>
   </div>
 
@@ -34,18 +160,27 @@
   </footer>
 
   <script>
-    document.querySelectorAll(".gallery img").forEach(img => {
-      img.addEventListener("click", () => {
-        const viewer = document.getElementById("fullscreen-viewer");
-        const fullImg = document.getElementById("fullscreen-img");
-        fullImg.src = img.src;
-        viewer.classList.remove("hidden");
+  $(document).ready(function () {
+    $('#gallery').justifiedGallery({
+      rowHeight: 300,
+      margins: 8,
+      lastRow: 'nojustify'
+    }).on('jg.complete', function () {
+       lightbox.option({
+        resizeDuration: 0,
+        fadeDuration: 0,
+        imageFadeDuration: 0,
+        wrapAround: true,
+        positionFromTop: 50,
+        disableScrolling: true,
+        fitImagesInViewport: true,
+        showImageNumberLabel: false,
+        albumLabel: "",
+        fadeDuration: 0,
+        imageFadeDuration: 0
       });
     });
-
-    document.getElementById("fullscreen-viewer").addEventListener("click", () => {
-      document.getElementById("fullscreen-viewer").classList.add("hidden");
-    });
-  </script>
+  });
+</script>
 </body>
 </html>
