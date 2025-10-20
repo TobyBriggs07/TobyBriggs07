@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="Photos/Favicon.png" type="image/png" />
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
+
+  <title>Toby Briggs Photography</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      /* Initial padding to push content below fixed header-nav */
+      padding-top: 60vh;
+      transition: padding-top 0.2s ease;
+    }
+
+    #header-nav-wrapper {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60vh;
+      max-height: 600px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: url('Photos/cover7.25.jpg') no-repeat center center/cover;
+      transition: height 0.2s ease;
+      z-index: 1005;
+      box-shadow: inset 0 -120px 120px -80px rgba(0, 0, 0, 0.8);
+      position: fixed;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: black;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 1;
+    }
+
+    #header-nav-wrapper header {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+      z-index: 2; /* Above overlay */
+      padding: 0 3rem;
+      user-select: none;
+    }
+
+    #header-nav-wrapper header h1 {
+      font-size: 3rem;
+      margin: 0;
+      line-height: 1.1;
+      text-align: center;
+      transition: font-size 0.2s ease;
+    }
+
+    #header-nav-wrapper nav {
+      flex-shrink: 0;
+      background-color: rgba(0,0,0,0.2);
+      padding: 0.75rem 0 1rem 0;
+      text-align: center;
+      user-select: none;
+      position: relative;
+      z-index: 2; /* Above overlay */
+    }
+
+    #header-nav-wrapper nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      transition: font-size 0.2s ease;
+    }
+
+    #header-nav-wrapper nav a:hover {
+      text-decoration: underline;
+    }
+
+    .blurb {
+      text-align: center;
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 9rem auto 9rem;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .blurb.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      border-bottom: 2px solid #444;
+      padding-bottom: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 10px;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeZoom 0.8s ease forwards;
+    }
+
+    .gallery img:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+
+    .gallery img:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .gallery img:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+
+    .gallery img:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    .container.visible .gallery img {
+      opacity: 1;
+      transform: scale(1);
+      animation: none;
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.8s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+    }
+
+    .fullscreen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+
+    .fullscreen img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .fullscreen.hidden {
+      display: none;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="header-nav-wrapper">
+    <div id="overlay"></div>
+    <header>
+      <h1>Toby Briggs Photography</h1>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <div class="blurb" id="blurb">
+    Welcome to my portfolio — a collection of stories told through landscapes, light, and moments that matter most.
+  </div>
+
+  <div class="container" id="home">
+    <h2>Portfolio Packages</h2>
+    <div class="gallery">
+      <a href="package.utah.html"><img src="Photos/Thumbnails/delicatearch.jpg" alt="Utah" loading="lazy" /></a>
+      <a href="package.seattle.html"><img src="Photos/Thumbnails/spaceneedle.jpg" alt="Seattle" loading="lazy" /></a>
+      <a href="package.washington.html"><img src="Photos/Thumbnails/mtrainier.jpg" alt="Washington State" loading="lazy" /></a>
+      <a href="package.sailboats.html"><img src="Photos/Thumbnails/tomsailing.jpg" alt="Sailboats" loading="lazy" /></a>
+    </div>
+  </div>
+
+  <div class="fullscreen hidden" id="fullscreen-viewer">
+    <img id="fullscreen-img" src="" alt="Fullscreen" />
+  </div>
+
+  <footer>
+    &copy; 2025 Toby Briggs. All rights reserved.
+  </footer>
+
+  <script>
+    const wrapper = document.getElementById("header-nav-wrapper");
+    const overlay = document.getElementById("overlay");
+    const headerTitle = wrapper.querySelector("header h1");
+    const navLinks = wrapper.querySelectorAll("nav a");
+
+    let maxHeight = window.innerHeight * 0.6; // 60vh
+    const minHeight = 150; // px minimal height
+    const scrollRange = 150; // scroll px to fully shrink
+
+    function lerp(start, end, t) {
+      return start + (end - start) * t;
+    }
+
+    function onScroll() {
+      const scrollY = window.scrollY;
+      const factor = Math.min(scrollY / scrollRange, 1);
+
+      const currentHeight = lerp(maxHeight, minHeight, factor);
+      wrapper.style.height = currentHeight + "px";
+
+      overlay.style.opacity = factor * 0.8;
+
+      const fontSize = lerp(3, 2.5, factor);
+      headerTitle.style.fontSize = fontSize + "rem";
+
+      const navFontSize = lerp(1.1, 1, factor);
+      navLinks.forEach(a => (a.style.fontSize = navFontSize + "rem"));
+
+      document.body.style.paddingTop = currentHeight + "px";
+
+      // Animate blurb & container fade in on scroll
+      const triggerBottom = window.innerHeight * 0.85;
+      const blurb = document.getElementById("blurb");
+      const container = document.getElementById("home");
+
+      if (blurb.getBoundingClientRect().top < triggerBottom) {
+        blurb.classList.add("visible");
+      }
+      if (container.getBoundingClientRect().top < triggerBottom) {
+        container.classList.add("visible");
+      }
+    }
+
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", () => {
+      maxHeight = window.innerHeight * 0.6;
+      onScroll();
+    });
+    window.addEventListener("load", onScroll);
+
+    // Fullscreen image viewer logic
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        const viewer = document.getElementById("fullscreen-viewer");
+        const fullImg = document.getElementById("fullscreen-img");
+        fullImg.src = img.src;
+        viewer.classList.remove("hidden");
+      });
+    });
+
+    document.getElementById("fullscreen-viewer").addEventListener("click", () => {
+      document.getElementById("fullscreen-viewer").classList.add("hidden");
+    });
+  </script>
+  
+
+</body>
+</html>

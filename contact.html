@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Photography Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Toby Briggs Photography</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fff;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 2rem;
+    }
+    iframe {
+      width: 100%;
+      max-width: 640px;
+      border: none;
+      height: 800px;
+    }
+    a.back-home {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+    }
+        .contact-links {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .contact-links a {
+      display: block;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0.3rem 0;
+      transition: opacity 0.2s ease;
+    }
+    .contact-links a:hover {
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Your Photography</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    <h2>Contact Me</h2>
-    <p>If you're interested in working together or have any questions, feel free to reach out via the form below or email me at <strong>you@example.com</strong>.</p>
-    <form>
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name"><br><br>
-
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email"><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
-
-      <input type="submit" value="Send">
-    </form>
+  <a href="index.html" class="back-home">← Back to Home</a>
+  <h1>Contact Me</h1>
+    <div class="contact-links">
+    <a href="mailto:tobybriggsphotography@gmail.com">📧 tobybriggsphotography@gmail.com</a>
+    <a href="https://www.instagram.com/tobybriggsphotography" target="_blank">📷 @tobybriggsphotography</a>
   </div>
 
-  <footer>
-    &copy; 2025 Toby Briggs. All rights reserved.
-  </footer>
+  <!-- paste your Google Form embed here -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdEpeKRyJucwTdgQU-R4JgrRFwcLC3P1n6nzfhiYhEdsAXbrA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
 </body>
 </html>
