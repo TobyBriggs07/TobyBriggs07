@@ -77,21 +77,45 @@
   </a>
 </div>
 
-  <!-- Featured Photos Section -->
-  <section class="py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-10">Featured Photos</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="photo-card cursor-pointer overflow-hidden shadow-lg" onclick="openModal('/Photos/Featured/_MG_3225.jpg', 'Mach Blue')">
-        <img src="/Photos/Featured/_MG_3225.jpg" alt="Mach Blue" class="w-full h-80 object-cover">
-      </div>
-      <div class="photo-card cursor-pointer overflow-hidden shadow-lg" onclick="openModal('/Photos/Featured/Tetons.jpg', 'Sky High')">
-        <img src="/Photos/Featured/Tetons.jpg" alt="Sky High" class="w-full h-80 object-cover">
-      </div>
-      <div class="photo-card cursor-pointer overflow-hidden shadow-lg" onclick="openModal('/Photos/Featured/IMG_7365.jpg', 'Golden Glow')">
-        <img src="/Photos/Featured/IMG_7365.jpg" alt="Golden Glow" class="w-full h-80 object-cover">
-      </div>
-    </div>
-  </section>
+<!-- Featured Photos Section -->
+<section class="py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-4">Featured Photos</h2>
+
+  <!-- Instruction text -->
+  <p class="text-gray-600 mb-2">
+    Click on a featured photo to buy a print
+  </p>
+
+  <!-- All prints link -->
+  <p class="mb-10">
+    <a href="https://tobybriggsphotography.pixieset.com" target="_blank"
+       class="text-blue-500 hover:underline">
+      Click here for all available prints
+    </a>
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+    <!-- Photo 1 -->
+    <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy/?pid=18344030361&id=0&h=MTMzMzU0ODYzNA" target="_blank"
+       class="photo-card block overflow-hidden shadow-lg">
+      <img src="/Photos/Featured/_MG_3225.jpg" alt="Mach Blue" class="w-full h-80 object-cover">
+    </a>
+
+    <!-- Photo 2 -->
+    <a href="https://tobybriggsphotography.pixieset.com/printscopy/?pid=18343963630&id=0&h=NjIzNzE0MDM" target="_blank"
+       class="photo-card block overflow-hidden shadow-lg">
+      <img src="/Photos/Featured/Tetons.jpg" alt="Sky High" class="w-full h-80 object-cover">
+    </a>
+
+    <!-- Photo 3 -->
+    <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy-1/?pid=18344048585&id=0&h=MjE2NDc5MjIy" target="_blank"
+       class="photo-card block overflow-hidden shadow-lg">
+      <img src="/Photos/Featured/IMG_7365.jpg" alt="Golden Glow" class="w-full h-80 object-cover">
+    </a>
+
+  </div>
+</section>
 
   <!-- Gallery Collections Section -->
   <section class="py-16 px-6 border-t border-gray-700">
