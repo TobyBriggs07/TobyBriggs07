@@ -40,17 +40,10 @@
       z-index: 2;
     }
 
-    .photo-card img {
+    .photo-card img, .gallery-card img {
       transition: transform 0.3s ease, filter 0.3s ease;
     }
-    .photo-card:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
-    .gallery-card img {
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-    .gallery-card:hover img {
+    .photo-card:hover img, .gallery-card:hover img {
       transform: scale(1.05);
       filter: brightness(1.15);
     }
@@ -67,107 +60,115 @@
   <section class="py-16 px-6 text-center">
     <h2 class="text-4xl font-bold mb-4">About Me</h2>
     <p class="max-w-2xl mx-auto text-lg text-gray-300">
-      Hi, I'm Toby Briggs. Shooting anything from landscapes to wildlife to aviation, I strive to capture moments that tell a story through my lens. Welcome to my gallery.
-    </p>
+      Hi, I'm Toby Briggs, a photographer from Seattle, Washington. From National Parks to cityscapes, I love capturing the beauty of the world around us. My work is now available for purchase as high-quality prints! Feel free to explore my gallery and reach out if you're interested in collaborating or have any questions. Thanks for stopping by!
   </section>
-<!-- Instagram icon centered under About Me -->
-<div class="mt-0 flex justify-center">
-  <a href="https://www.instagram.com/tobybriggsphotography" target="_blank">
-    <img src="/Photos/instagram.webp" alt="Instagram" class="w-12 h-12">
-  </a>
-</div>
-
-<!-- Featured Photos Section -->
-<section class="py-16 px-6 text-center">
-  <h2 class="text-3xl font-bold mb-4">Featured Photos</h2>
-
-  <!-- Instruction text -->
-  <p class="text-gray-600 mb-2">
-    Click on a featured photo to buy a print
-  </p>
-
-  <!-- All prints link -->
-  <p class="mb-10">
-    <a href="https://tobybriggsphotography.pixieset.com" target="_blank"
-       class="text-blue-500 hover:underline">
-      Click here for all available prints
+  
+  <!-- Instagram icon centered under About Me -->
+  <div class="mt-0 flex justify-center">
+    <a href="https://www.instagram.com/tobybriggsphotography" target="_blank">
+      <img src="/Photos/instagram.webp" alt="Instagram" class="w-12 h-12">
     </a>
-  </p>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-    <!-- Photo 1 -->
-    <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy/store/product/high-quality-prints/" target="_blank"
-       class="photo-card block overflow-hidden shadow-lg">
-      <img src="/Photos/Featured/_MG_3225.jpg" alt="Mach Blue" class="w-full h-80 object-cover">
-    </a>
-
-    <!-- Photo 2 -->
-    <a href="https://tobybriggsphotography.pixieset.com/printscopy/store/product/high-quality-prints/" target="_blank"
-       class="photo-card block overflow-hidden shadow-lg">
-      <img src="/Photos/Featured/Tetons.jpg" alt="Sky High" class="w-full h-80 object-cover">
-    </a>
-
-    <!-- Photo 3 -->
-    <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy-1/store/product/high-quality-prints/" target="_blank"
-       class="photo-card block overflow-hidden shadow-lg">
-      <img src="/Photos/Featured/IMG_7365.jpg" alt="Golden Glow" class="w-full h-80 object-cover">
-    </a>
-
   </div>
-</section>
 
-  <!-- Gallery Collections Section -->
+  <!-- Featured Photos Section -->
+  <section class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Featured Photos</h2>
+    <p class="text-gray-600 mb-10">Click on a photo to enlarge</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      
+      <!-- Featured 1 -->
+      <div onclick="openModal('/Photos/Current Store/Photos/_MG_3225.jpg', 'Mach Blue')" class="photo-card block overflow-hidden shadow-lg cursor-pointer">
+        <img src="/Photos/Current Store/Photos/_MG_3225.jpg" alt="Mach Blue" class="w-full h-80 object-cover">
+      </div>
+      
+      <!-- Featured 2 -->
+      <div onclick="openModal('/Photos/Current Store/Photos/_MG_3579.jpg', 'Sky High')" class="photo-card block overflow-hidden shadow-lg cursor-pointer">
+        <img src="/Photos/Current Store/Photos/_MG_3579.jpg" alt="Sky High" class="w-full h-80 object-cover">
+      </div>
+      
+      <!-- Featured 3 -->
+      <div onclick="openModal('/Photos/Current Store/Photos/IMG_7365.jpg', 'Golden Glow')" class="photo-card block overflow-hidden shadow-lg cursor-pointer">
+        <img src="/Photos/Current Store/Photos/IMG_7365.jpg" alt="Golden Glow" class="w-full h-80 object-cover">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Available Prints Section (9 Photos) -->
   <section class="py-16 px-6 border-t border-gray-700">
-    <h2 class="text-3xl font-bold text-center mb-10">Galleries</h2>
+    <h2 class="text-3xl font-bold text-center mb-10">Available Prints</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
-      <a href="gallerysites/WashingtonLR2/Washington.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-3.jpg" alt="Washington" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Washington</h3>
+      
+      <!-- Print 1: Golden Glow -->
+      <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy-1/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/IMG_7365.jpg" alt="Golden Glow" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Golden Glow</h3>
       </a>
-      <a href="/gallerysites/UtahLR/Utah.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-1.jpg" alt="Utah" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Utah</h3>
+
+      <!-- Print 2: Soaring Eagle -->
+      <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy-2/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/_MG_0810.jpg" alt="Soaring Eagle" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Soaring Eagle</h3>
       </a>
-      <a href="/gallerysites/Montana-WyomingLR/Montana-Wyoming.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-8.jpg" alt="Montana and Wyoming" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Montana and Wyoming</h3>
+
+      <!-- Print 3: Fisherman -->
+      <a href="https://tobybriggsphotography.pixieset.com/soaringeaglecopy/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/_MG_0953.jpg" alt="Fisherman" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Fisherman</h3>
       </a>
+
+      <!-- Print 4: Mach Blue -->
+      <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/_MG_3225.jpg" alt="Mach Blue" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Mach Blue</h3>
+      </a>
+
+      <!-- Print 5: Sky High -->
+      <a href="https://tobybriggsphotography.pixieset.com/printscopy/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/_MG_3579.jpg" alt="Sky High" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Sky High</h3>
+      </a>
+
+      <!-- Print 6: Rainbow Slot -->
+      <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy-5/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/IMG_5778-Enhanced-NR.jpg" alt="Rainbow Slot" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Rainbow Slot</h3>
+      </a>
+
+      <!-- Print 7: Wispy Needle -->
+      <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy-6/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/IMG_7901.jpg" alt="Wispy Needle" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Wispy Needle</h3>
+      </a>
+
+      <!-- Print 8: Going to the Sun Road -->
+      <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy-3/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/IMG_8414.jpg" alt="Going to the Sun Road" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Going to the Sun Road</h3>
+      </a>
+
+      <!-- Print 9: Catalina Sunset -->
+      <a href="https://tobybriggsphotography.pixieset.com/skyhighcopy-4/store/product/high-quality-prints/" target="_blank" class="gallery-card block overflow-hidden shadow-lg">
+        <img src="/Photos/Current Store/Photos/tbriggs_catalinasunset_2804-Edit.jpg" alt="Catalina Sunset" class="w-full h-80 object-cover">
+        <h3 class="text-center text-xl font-semibold mt-3 mb-3">Catalina Sunset</h3>
+      </a>
+      
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
-      <a href="/gallerysites/ColoradoLR/Colorado.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-9.jpg" alt="Colorado" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Colorado</h3>
-      </a>
-      <a href="/gallerysites/BanffLR/Banff.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-6.jpg" alt="Banff" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Banff</h3>
-      </a>
-      <a href="/gallerysites/BajaLR/Baja.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-5.jpg" alt="Baja California" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Baja California</h3>
-      </a>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
-      <a href="/gallerysites/SailboatsLR/Sailboats.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-2.jpg" alt="Sailboats" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Sailboats</h3>
-      </a>
-      <a href="/gallerysites/BlueAngelsLR2/BlueAngels.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-7.jpg" alt="Blue Angels" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Blue Angels</h3>
-      </a>
-      <a href="/gallerysites/WildlifeLR2/Wildlife.html" class="gallery-card block overflow-hidden shadow-lg">
-        <img src="/Photos/Thumbnails/Thumbnail-4.jpg" alt="Wildlife" class="w-full h-80 object-cover">
-        <h3 class="text-center text-xl font-semibold mt-3">Wildlife</h3>
-      </a>
+  </section>
+
+  <!-- Instagram Embed Section -->
+  <section class="py-16 px-6 border-t border-gray-700 text-center">
+    <h2 class="text-3xl font-bold mb-10">Latest on Instagram</h2>
+    <div class="w-3/4 mx-auto flex justify-center">
+      <iframe src="https://www.instagram.com/tobybriggsphotography/embed/?theme=dark" class="w-full h-[600px] rounded-lg shadow-lg bg-[#0f0f0f]" frameborder="0" scrolling="yes" allowtransparency="true"></iframe>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="py-16 px-6 text-center border-t border-gray-700">
     <h2 class="text-3xl font-bold mb-4">Contact</h2>
-    <p class="mb-8 mt-5 text-gray-300">Interested in buying a print or collaborating?</p>
+    <p class="mb-8 mt-5 text-gray-300">Have questions or want to discuss a collaboration?</p>
     <a href="contact.html" class="contact-button px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">  Get in Touch  </a>
   </section>
 
